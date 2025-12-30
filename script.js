@@ -1,15 +1,12 @@
-let progress = JSON.parse(localStorage.getItem("progress")) || {
-  day: 1
-};
-
+let progress = JSON.parse(localStorage.getItem("progress")) || { day: 1 };
 const chat = document.getElementById("chat");
 
 updateStatus();
 startLesson();
 
 function startLesson() {
-  const lesson = course[progress.day - 1];
-  addMessage(`📘 Day ${lesson.day} (${lesson.level})\n${lesson.lesson}`, "agent");
+  const l = course[progress.day - 1];
+  addMessage(`📘 ${l.lesson}`, "agent");
 }
 
 function sendMessage() {
@@ -20,33 +17,34 @@ function sendMessage() {
   addMessage(text, "user");
   input.value = "";
 
-  setTimeout(() => {
-    nextStep();
-  }, 500);
+  fetch("http://localhost:3000/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: text })
+  })
+  .then(res => res.json())
+  .then(data => {
+    addMessage("✅ Grammar fix:\n" + data.reply, "agent");
+    nextDay();
+  });
 }
 
-function nextStep() {
+function nextDay() {
   progress.day++;
-  if (progress.day > 30) {
-    addMessage("🎉 You finished the 30-day English course!", "agent");
-    return;
-  }
-
   localStorage.setItem("progress", JSON.stringify(progress));
   updateStatus();
-  startLesson();
+  if (progress.day <= 30) startLesson();
 }
 
 function addMessage(text, type) {
-  const div = document.createElement("div");
-  div.className = type;
-  div.innerText = text;
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
+  const d = document.createElement("div");
+  d.className = type;
+  d.innerText = text;
+  chat.appendChild(d);
 }
 
 function updateStatus() {
-  const lesson = course[progress.day - 1];
+  const l = course[progress.day - 1] || {};
   document.getElementById("day").innerText = progress.day;
-  document.getElementById("level").innerText = lesson.level;
+  document.getElementById("level").innerText = l.level || "Completed";
 }
