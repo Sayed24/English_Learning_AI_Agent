@@ -1,35 +1,5 @@
-const course = [
-  { day: 1, level: "Beginner", lesson: "Say: Hello, my name is ___." },
-  { day: 2, level: "Beginner", lesson: "Say: I am a student." },
-  { day: 3, level: "Beginner", lesson: "Learn verbs: eat, go, play." },
-  { day: 4, level: "Beginner", lesson: "Make a sentence using 'go'." },
-  { day: 5, level: "Beginner", lesson: "Ask: What is your name?" },
-  { day: 6, level: "Beginner", lesson: "Learn numbers 1–10." },
-  { day: 7, level: "Beginner", lesson: "Review week 1." },
-  { day: 8, level: "Beginner", lesson: "Learn present tense." },
-  { day: 9, level: "Beginner", lesson: "Write 2 simple sentences." },
-  { day: 10, level: "Beginner", lesson: "Mini test." },
-
-  { day: 11, level: "Intermediate", lesson: "Learn past tense." },
-  { day: 12, level: "Intermediate", lesson: "Write about yesterday." },
-  { day: 13, level: "Intermediate", lesson: "Future tense: will." },
-  { day: 14, level: "Intermediate", lesson: "Daily routine paragraph." },
-  { day: 15, level: "Intermediate", lesson: "Conversation practice." },
-  { day: 16, level: "Intermediate", lesson: "Describe a place." },
-  { day: 17, level: "Intermediate", lesson: "Write 5 sentences." },
-  { day: 18, level: "Intermediate", lesson: "Reading practice." },
-  { day: 19, level: "Intermediate", lesson: "Grammar review." },
-  { day: 20, level: "Intermediate", lesson: "Mid-course test." },
-
-  { day: 21, level: "Advanced", lesson: "Express opinions." },
-  { day: 22, level: "Advanced", lesson: "Learn 5 idioms." },
-  { day: 23, level: "Advanced", lesson: "Write a short story." },
-  { day: 24, level: "Advanced", lesson: "Formal vs informal English." },
-  { day: 25, level: "Advanced", lesson: "Debate topic." },
-  { day: 26, level: "Advanced", lesson: "Essay writing." },
-  { day: 27, level: "Advanced", lesson: "Listening practice." },
-  { day: 28, level: "Advanced", lesson: "Speaking practice." },
-  { day: 29, level: "Advanced", lesson: "Final review." },
-  { day: 30, level: "Advanced", lesson: "🎉 Final test & completion!" }
-];
-
+const course = Array.from({ length: 30 }, (_, i) => ({
+  day: i + 1,
+  level: i < 10 ? "Beginner" : i < 20 ? "Intermediate" : "Advanced",
+  lesson: `Day ${i + 1} lesson: Practice English sentences.`
+}));
