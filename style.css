@@ -1,1 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+#chat {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.agent {
+  background: #e0f0ff;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.user {
+  background: #d1ffd1;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+input {
+  width: 60%;
+  padding: 10px;
+}
+
+button {
+  padding: 10px;
+}
 
