@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>🗣️ 30-Day English Learning AI Agent</h1>
+<h1>🗣️ English Learning AI Agent</h1>
 
 <div id="status">
   Day: <span id="day"></span> |
@@ -16,10 +16,17 @@
 
 <div id="chat"></div>
 
-<input id="userInput" placeholder="Type your answer here..." />
+<input id="userInput" placeholder="Type or use voice..." />
 <button onclick="sendMessage()">Send</button>
+<button onclick="startVoice()">🎤 Speak</button>
+
+<button onclick="startTest()">📝 Test</button>
+<button onclick="generateCertificate()">🎓 Certificate</button>
 
 <script src="course.js"></script>
+<script src="voice.js"></script>
+<script src="test.js"></script>
+<script src="certificate.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
