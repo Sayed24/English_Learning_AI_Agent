@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #f2f2f2;
   text-align: center;
 }
@@ -14,37 +14,16 @@ body {
   min-height: 300px;
 }
 
-.agent {
-  background: #e3f2fd;
-  padding: 10px;
-  margin: 5px;
-  text-align: left;
-  border-radius: 5px;
-}
-
-.user {
-  background: #d0ffd6;
-  padding: 10px;
-  margin: 5px;
-  text-align: right;
-  border-radius: 5px;
-}
+.agent { background: #e3f2fd; padding: 10px; margin: 5px; }
+.user { background: #d0ffd6; padding: 10px; margin: 5px; }
 
 #status {
   background: #222;
   color: white;
   padding: 10px;
   width: 80%;
-  max-width: 600px;
   margin: auto;
-  border-radius: 5px;
 }
 
-input {
-  width: 60%;
-  padding: 10px;
-}
-
-button {
-  padding: 10px 15px;
-}
+button { margin: 5px; padding: 10px; }
+input { width: 60%; padding: 10px; }
